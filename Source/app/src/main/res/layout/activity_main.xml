@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:padding="24dp">
+        <TextView
+            style="@style/TextAppearance.MaterialComponents.Headline5"
+            android:id="@+id/heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/heading"
+            android:textColor="@color/black" />
+
+        <TextView
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:id="@+id/srcheading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/heading"
+            android:layout_alignParentStart="true"
+            android:text="@string/source" />
+
+        <RelativeLayout
+            android:id="@+id/inputRelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/srcheading">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLayout"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                >
+
+                <EditText
+                    android:id="@+id/srcvalue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint"
+                    android:inputType="number"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Spinner
+                android:id="@+id/input_unit"
+                android:layout_toEndOf="@id/inputLayout"
+                android:layout_marginStart="10dp"
+                android:layout_alignBottom="@id/inputLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+        </RelativeLayout>
+
+        <TextView
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:id="@+id/dstHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/destination"
+            android:layout_below="@id/inputRelativeLayout" />
+        <RelativeLayout
+            android:id="@+id/dstRelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@id/dstHeading">
+            <TextView
+                android:id="@+id/output"
+                style="@style/TextAppearance.MaterialComponents.Headline5"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:textColor="@color/black" />
+            <Spinner
+                android:id="@+id/output_unit"
+                android:layout_marginStart="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@id/output"
+                />
+        </RelativeLayout>
+
+
+        <Button
+            android:id="@+id/convert_button"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/convert"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/dstRelativeLayout"/>
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

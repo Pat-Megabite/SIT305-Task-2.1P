@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="heading">Unit Converter</string>
+    <string name="source">Source Unit</string>
+    <string name="destination">Destination Unit</string>
+    <string name="hint">Enter Value</string>
+    <string name="convert">Convert</string>
+    <string-array name="units">
+        <item>inch</item>
+        <item>foot</item>
+        <item>yard</item>
+        <item>mile</item>
+        <item>cm</item>
+        <item>m</item>
+        <item>km</item>
+        <item>pound</item>
+        <item>ounce</item>
+        <item>ton</item>
+        <item>gram</item>
+        <item>kg</item>
+        <item>C</item>
+        <item>F</item>
+        <item>K</item>
+    </string-array>
+</resources>
