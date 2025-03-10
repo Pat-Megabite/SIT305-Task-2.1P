@@ -148,6 +148,8 @@ public class UnitConverter {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        //Setup inputs used
         inputValue = findViewById(R.id.srcvalue);
         inputLayout = findViewById(R.id.inputLayout);
         outputValue = findViewById(R.id.output);
@@ -167,10 +169,12 @@ public class UnitConverter {
         outputUnit.setAdapter(adapter);
 
         convertButton.setOnClickListener(v -> {
+            inputLayout.setErrorEnabled(false);
             String inputDropdown = inputUnit.getSelectedItem().toString();
             String outputDropdown = outputUnit.getSelectedItem().toString();
             try {
                 Double value = Double.parseDouble(inputValue.getText().toString());
+                //Only temperatures may be negative or 0
                 if(value <= 0 && !unitConverter.getCategory(inputDropdown).equals("Temperature")) { throw new NumberFormatException();}
                 else    {
                     Double output = unitConverter.convert(value, inputDropdown, outputDropdown);
